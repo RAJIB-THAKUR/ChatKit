@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" /> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <title>ChatKit App</title>
+</head>
+
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h1 id="currUserName"><i class="fas fa-smile"></i> ChatKit</h1>
+            <div id="search-container">
+                <input id="search-box" type="text" placeholder="Search" />
+                <ul id="searchResults">
+                </ul>
+            </div>
+            <a id="leave-btn" class="btn">Leave Chat</a>
+        </header>
+        <main class="chat-main">
+            <!-- <div> -->
+            <div class="chat-sidebar">
+                <h3><i class="fas fa-users"></i>Contacts</h3>
+                <ul id="users"></ul>
+            </div>
+
+            <!-- <div class="chat-sidebar">
+                    <h3><i class="fas fa-users"></i>Broadcast</h3>
+                    <ul id="users"></ul>
+                </div> -->
+            <!-- </div> -->
+            <div class="chat-messages">
+                <!-- Messages will be appended here -->
+                <div id="typingIndicator" class="typing-indicator">
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                </div>
+            </div>
+
+        </main>
+        <div class="chat-form-container">
+            <form id="chat-form">
+                <input id="recipient" type="text" placeholder="Receipent Name" required readonly hidden />
+                <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" readonly />
+                <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- External Library called qs from CDN-->
+    <!-- qs provides functions for parsing a query string into an object
+  and formatting an object into queyr string -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+        integrity="sha512-f0AM6x08kthGzMyDHZjBgjBCPp8V8ovlHYCI1jMkhViTeX3MykGCf/DnN1khWss/6d1105eAG4TniSKy6UhZrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

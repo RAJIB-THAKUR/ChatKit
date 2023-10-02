@@ -1,0 +1,370 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap'); */
+
+:root {
+	--dark-color-a: #667aff;
+	--dark-color-b: #7386ff;
+	--light-color: #e6e9ff;
+	--success-color: #5cb85c;
+	--error-color: #d9534f;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	background: var(--light-color);
+	margin: 20px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.btn {
+	cursor: pointer;
+	padding: 5px 15px;
+	background: var(--light-color);
+	color: var(--dark-color-a);
+	border: 0;
+	font-size: 17px;
+}
+
+/* Chat Page */
+
+.chat-container {
+	max-width: 1100px;
+	background: #fff;
+	margin: 30px auto;
+	overflow: hidden;
+}
+
+.chat-header {
+	background: var(--dark-color-a);
+	color: #fff;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* position: relative; */
+}
+
+.chat-main {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+
+.chat-sidebar {
+	background: var(--dark-color-b);
+	color: #fff;
+	padding: 20px 20px 60px;
+	overflow-y: scroll;
+}
+
+.chat-sidebar h2 {
+	font-size: 20px;
+	background: rgba(0, 0, 0, 0.1);
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.chat-sidebar h3 {
+	margin-bottom: 15px;
+}
+
+.chat-sidebar ul li {
+	padding: 10px 0;
+}
+
+.chat-messages {
+	padding: 30px;
+	max-height: 400px;
+	height: 400px;
+	overflow-y: scroll;
+}
+
+.chat-messages .message {
+	padding: 10px;
+	margin-bottom: 15px;
+	background-color: var(--light-color);
+	border-radius: 5px;
+	overflow-wrap: break-word;
+}
+
+.chat-messages .message .meta {
+	font-size: 15px;
+	font-weight: bold;
+	color: var(--dark-color-b);
+	opacity: 0.7;
+	margin-bottom: 7px;
+}
+
+.chat-messages .message .meta span {
+	color: #777;
+}
+
+.chat-form-container {
+	padding: 20px 30px;
+	background-color: var(--dark-color-a);
+}
+
+.chat-form-container form {
+	display: flex;
+}
+
+.chat-form-container input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	flex: 1;
+}
+
+/* Join Page */
+.join-container {
+	max-width: 500px;
+	margin: 80px auto;
+	color: #fff;
+}
+
+.join-header {
+	text-align: center;
+	padding: 20px;
+	background: var(--dark-color-a);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.join-main {
+	padding: 30px 40px;
+	background: var(--dark-color-b);
+}
+
+.join-main p {
+	margin-bottom: 20px;
+}
+
+.join-main .form-control {
+	margin-bottom: 20px;
+}
+
+.join-main label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.join-main input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.join-main select {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.join-main .btn {
+	margin-top: 20px;
+	width: 100%;
+}
+
+@media (max-width: 700px) {
+	.chat-main {
+		display: block;
+	}
+
+	.chat-sidebar {
+		display: none;
+	}
+}
+
+#orOption {
+	text-align: center;
+}
+
+#recipient {
+	max-width: 200px;
+	margin-right: 25px;
+}
+
+.selected_user {
+	background-color: #3e3ec8;
+}
+
+#users li {
+	cursor: pointer;
+	position: relative;
+}
+
+#search-container {
+	position: relative;
+}
+
+#search-container #search-box {
+	font-size: 16px;
+	padding: 10px;
+	height: 30px;
+	width: 500px;
+	/* width: 100%; */
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	/* flex: 1; */
+}
+
+#search-container #searchResults {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	/* to prevent list overflow */
+	max-height: 100px;
+	/* Add vertical scrollbar if the list overflows */
+	overflow-y: auto;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: none;
+	color: black;
+	z-index: 1;
+}
+
+/* Style for the list items in the search results */
+#searchResults li {
+	padding: 10px;
+	cursor: pointer;
+}
+
+#searchResults li:hover {
+	background-color: grey;
+}
+
+/* Show user List only when search input box is focused (
++ means Adjacent sibling selector */
+/* #search-box:focus+#searchResults {
+	display: block;
+} */
+
+#searchResults li.selected {
+	background-color: blueviolet;
+}
+
+.chat-messages .message-right {
+	/* padding: 10px;*/
+	margin-left: 80px;
+	background-color: #c8cbeb;
+	/* border-radius: 5px;
+	overflow-wrap: break-word; */
+}
+
+.chat-messages .message-left {
+	/* padding: 10px;*/
+	margin-right: 80px;
+	/* background-color: #a4a9e1; */
+	/* border-radius: 5px;
+	overflow-wrap: break-word; */
+}
+
+/*Make scrollbar invisible */
+.chat-messages::-webkit-scrollbar {
+	width: 0px;
+}
+
+/* .chat-messages ::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+
+.chat-messages ::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+} */
+
+.typing-indicator {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* background-color: #e6e9ff; */
+	/* position: absolute; */
+	/* background-color: #d9534f; */
+	/* border: solid black 5px; */
+	/* left: 240px; */
+	/* top: 20px; */
+	/* bottom: 100px; */
+	display: none;
+}
+
+.dot {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	margin: 0 2px;
+	background-color: #333;
+	border-radius: 50%;
+	animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+
+	0%,
+	80%,
+	100% {
+		transform: scale(0.8);
+		opacity: 0.5;
+	}
+
+	40% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.badge {
+	background-color: #433ad5;
+	color: white;
+	border-radius: 50%;
+	padding: 4px 8px;
+	font-size: 12px;
+	margin-left: 6px;
+	right: 12px;
+	position: absolute;
+}
+
+.online-indicator {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	border-radius: 100%;
+	margin-left: 5px;
+	background-color: #26c726;
+	position: relative;
+	border: 0.5px solid #fff;
+}
+
+.online-indicator::after {
+	/* Unicode character for checkmark */
+	content: '\2713';
+	font-size: 8px;
+	color: #fff;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
