@@ -83,7 +83,7 @@ io.on('connection', socket => {
         const user = getUserById(socket.id);
 
         const recipient = getUserByMobile(recipientMobile);
-        if (recipient) {
+        if (recipient && user) {
             if (user.id !== recipient.id) {
 
                 // Emit the private message to the recipient
