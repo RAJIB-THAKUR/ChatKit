@@ -119,7 +119,8 @@ function handleUserClick(event) {
         li_user.classList.add("selected_user");
 
         hideTypingIndicator();
-
+        debouncedHandleStopTyping(recipient.mobile);
+        
         //first clear the user chat interface
         clearChatMessages();
 
