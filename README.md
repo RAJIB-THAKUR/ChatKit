@@ -1,6 +1,6 @@
--> This is a real time web based chat application.
+-> ChatKit is a Real Time Web Based Chat Application.
 
--> Primary focus was on learning Socket Programming and apply it for real time communication.
+-> Primary focus was on learning Socket Programming and apply related concepts for establishing real time communication.
 
 -> Frontend - HTML, CSS, JavaScript
 
