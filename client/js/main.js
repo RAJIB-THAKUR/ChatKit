@@ -118,6 +118,7 @@ function handleUserClick(event) {
         //Add "selected" class to selected user
         li_user.classList.add("selected_user");
 
+        func_clearMsgBox();
         hideTypingIndicator();
         debouncedHandleStopTyping(recipient.mobile);
         
@@ -215,6 +216,10 @@ function func_emit_search_contacts(searchInput) {
 //Clear search box value
 function func_clearSearchBox() {
     searchInputBox.value = "";
+}
+
+function func_clearMsgBox() {
+    msg.value = "";
 }
 
 //Adding users to DOM
@@ -378,7 +383,7 @@ chatForm.addEventListener('submit', (e) => {
     //Emit message to the server
     socket.emit('private message', { recipientMobile, msg: msg.value });
 
-    msg.value = '';
+    func_clearMsgBox();
 
     focusMsgBox();
 });
