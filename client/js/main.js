@@ -27,7 +27,7 @@ const debouncedHandleStopTyping = debounce(func_handleStopTyping, stopTypingDela
 function authenticateUser() {
     const authenticated = sessionStorage.getItem("authenticated");
     if (!authenticated) {
-        window.location.href = `http://localhost:9000`;
+        window.location.href = `https://chatkit-app.onrender.com`;
     }
 }
 
@@ -318,7 +318,7 @@ outputUserName();
 socket.emit('join_Individual_Chat', { username, mobile });
 
 socket.on('userAbsent', () => {
-    window.location.href = `http://localhost:9000`;
+    window.location.href = `https://chatkit-app.onrender.com`;
 })
 
 //Message from Server
@@ -460,7 +460,7 @@ leaveBtn.addEventListener('click', () => {
     if (confirmation) {
         sessionStorage.clear();
         // window.location = '../index.html';
-        window.location.href = `http://localhost:9000`;
+        window.location.href = `https://chatkit-app.onrender.com`;
     }
 })
 
