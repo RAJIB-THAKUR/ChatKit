@@ -10,12 +10,12 @@ joinForm.addEventListener("submit", (e) => {
 
   if (!validateMobile(mobile.value.trim())) alert("Enter Valid Phone Number");
   else if (!validatePassword(password.value)) {
-    debugger;
+    //debugger;
     const msg =
       "Password must contain atleast 8 characters including  1 uppercase letter,1 lowercase letter,1 digit,1 special character (!@#$%&*()-+=^)";
     alert(msg);
   } else {
-    debugger;
+    //debugger;
     authenticateUser(username.value, mobile.value, password.value);
   }
 });
